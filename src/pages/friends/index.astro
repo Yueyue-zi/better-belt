@@ -1,0 +1,42 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import FriendCard from "@/components/FriendCard.astro";
+import { FRIENDS } from "@/config";
+import Header from "@/components/Header.astro";
+import Main from "@/layouts/Main.astro";
+import Footer from "@/components/Footer.astro";
+
+export const prerender = true;
+
+const title = "友链";
+const description = "朋友们的一些优秀网站";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+
+  <Main pageTitle="友链" pageDesc="All the friends">
+    <!-- 友链列表 -->
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+      {FRIENDS.map(friend => <FriendCard friend={friend} />)}
+    </div>
+  </Main>
+  <!-- 友链统计 -->
+  <!-- <div class="mb-8 p-6 bg-card rounded-lg">
+      <div class="flex flex-wrap gap-6 justify-center">
+        <div class="text-center">
+          <div class="text-3xl font-bold text-accent">{FRIENDS.length}</div>
+          <div class="text-sm opacity-70">友链总数</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-accent">
+            {[...new Set(FRIENDS.flatMap(f => f.tags))].length}
+          </div>
+          <div class="text-sm opacity-70">分类数量</div>
+        </div>
+      </div>
+    </div> -->
+
+  <!-- 申请友链提示 -->
+    <Footer />
+</Layout>

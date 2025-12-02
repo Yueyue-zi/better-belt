@@ -1,0 +1,70 @@
+---
+// import IconExternalLink from "@/assets/icons/IconExternalLink.svg";
+
+interface Props {
+  friend: {
+    name: string;
+    description: string;
+    url: string;
+    avatar?: string;
+    tags?: string[];
+  };
+}
+
+const { friend } = Astro.props;
+---
+
+<article
+  class="group bg-card relative overflow-hidden rounded-xl border border-border p-4 transition-all duration-300 hover:border-accent/60 hover:shadow-lg hover:-translate-y-1 w-full"
+>
+  <!-- 装饰元素 -->
+
+  <!-- 内容 -->
+  <a href={friend.url} target="_blank" rel="noopener noreferrer" class="block">
+    <div class="flex items-center gap-3">
+      <!-- 头像 -->
+      {
+        friend.avatar ? (
+          <img
+            src={friend.avatar}
+            alt={friend.name}
+            class="h-16 w-16 rounded-full border-2 border-accent/65 object-cover transition-colors border-accent"
+            loading="lazy"
+          />
+        ) : (
+          <div class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-border bg-gradient-to-br from-accent/20 to-accent/10">
+            <span class="text-2xl font-bold text-accent">
+              {friend.name.charAt(0)}
+            </span>
+          </div>
+        )
+      }
+
+      <!-- 基本信息 -->
+      <div class="flex-1">
+        <div class="flex items-center justify-between">
+          <h3
+            class="text-xl font-bold transition-colors group-hover:text-accent"
+          >
+            {friend.name}
+          </h3>
+          <!-- <IconExternalLink class="w-5 h-5 opacity-50 group-hover:opacity-100 group-hover:text-accent transition-all" /> -->
+        </div>
+        <p class="mt-2 line-clamp-2 text-sm opacity-80">
+          {friend.description}
+        </p>
+      </div>
+
+      <!-- 标签 -->
+      <!-- {friend.tags && friend.tags.length > 0 && (
+      <div class="flex flex-wrap gap-2 mt-4">
+        {friend.tags.map((tag) => (
+          <span class="px-3 py-1 text-xs bg-background border border-border rounded-full opacity-70 hover:opacity-100 transition-opacity">
+            {tag}
+          </span>
+        ))}
+      </div>
+    )} -->
+    </div>
+  </a>
+</article>
