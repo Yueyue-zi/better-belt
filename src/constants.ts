@@ -85,7 +85,7 @@ export const SHARE_LINKS: Social[] = [
 
 export const GISCUS: GiscusProps = {
   repo: "Yueyue-zi/better-belt",
-  repoId: "R_kgDOQg5x",
+  repoId: "R_kgDOQg5x-g",
   category: "General",
   categoryId: "DIC_kwDOQg5x-s4CzTEN",
   mapping: "url",
