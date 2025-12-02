@@ -7,6 +7,7 @@ import IconWhatsapp from "@/assets/icons/IconWhatsapp.svg";
 import IconFacebook from "@/assets/icons/IconFacebook.svg";
 import IconTelegram from "@/assets/icons/IconTelegram.svg";
 import IconPinterest from "@/assets/icons/IconPinterest.svg";
+import type { GiscusProps } from "@giscus/react";
 import { SITE } from "@/config";
 
 interface Social {
@@ -81,3 +82,18 @@ export const SHARE_LINKS: Social[] = [
     icon: IconMail,
   },
 ] as const;
+
+export const GISCUS: GiscusProps = {
+  repo: "Yueyue-zi/better-belt",
+  repoId: "R_kgDOQg5x",
+  category: "General",
+  categoryId: "DIC_kwDOQg5x-s4CzTEM",
+  mapping: "url",
+  reactionsEnabled: "1",
+  emitMetadata: "0",
+  inputPosition: "bottom",
+  lang: "zh-CN",
+  loading: "lazy",
+  theme: "fro",
+  strict: "1",
+};

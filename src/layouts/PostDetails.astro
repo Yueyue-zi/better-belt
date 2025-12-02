@@ -13,6 +13,8 @@ import { getPath } from "@/utils/getPath";
 import { slugifyStr } from "@/utils/slugify";
 import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
 import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
+// import CommentSection from '@/components/CommentSection.astro'
+import Comments from "@/components/Comments";
 import { SITE } from "@/config";
 
 export interface Props {
@@ -128,6 +130,8 @@ const nextPost =
     <BackToTopButton />
 
     <ShareLinks />
+
+    <Comments client:only="react" />
 
     <hr class="my-6 border-dashed" />
 
