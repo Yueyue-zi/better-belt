@@ -87,7 +87,7 @@ export const GISCUS: GiscusProps = {
   repo: "Yueyue-zi/better-belt",
   repoId: "R_kgDOQg5x",
   category: "General",
-  categoryId: "DIC_kwDOQg5x-s4CzTEM",
+  categoryId: "DIC_kwDOQg5x-s4CzTEN",
   mapping: "url",
   reactionsEnabled: "1",
   emitMetadata: "0",
