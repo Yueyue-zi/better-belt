@@ -9,6 +9,7 @@ import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
 import LinkButton from "./LinkButton.astro";
 import { SITE } from "@/config";
 
+
 const { pathname } = Astro.url;
 
 // Remove trailing slash from current pathname if exists
@@ -22,6 +23,8 @@ const isActive = (path: string) => {
   return currentPath === path || currentPathArray[0] === pathArray[0];
 };
 ---
+
+<!-- <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/dyzgt/dist/%E6%96%97%E9%B1%BC%E8%BF%BD%E5%85%89%E4%BD%93/result.css' /> -->
 
 <header>
   <a
@@ -41,6 +44,7 @@ const isActive = (path: string) => {
     >
       <a
         href="/"
+        style="font-family: 'LXGW WenKai';"
         class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none"
       >
         {SITE.title}
