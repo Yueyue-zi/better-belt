@@ -5,19 +5,21 @@
 
 :root,
 html[data-theme="light"] {
-  --background: #fdfdfd;
-  --foreground: #282728;
-  --accent: #006cac;
-  --muted: #e6e6e6;
-  --border: #ece9e9;
+  --background: #f2f5ec;
+  --foreground: #353538;
+  --accent: #1158d1;
+  --muted: #bbc789;
+  --border: #7cadff;
+  --font-sans: "FiraCode Nerd Font Mono", Inter, ui-sans-serif, system-ui, sans-serif;
 }
 
 html[data-theme="dark"] {
-  --background: #212737;
-  --foreground: #eaedf3;
-  --accent: #ff6b01;
-  --muted: #343f60;
-  --border: #ab4b08;
+  --background: #2f3741;
+  --foreground: #e6e6e6;
+  --accent: #1ad9d9;
+  --muted: #596b81;
+  --border: #3b4655;
+  --font-sans: "FiraCode Nerd Font Mono", sans-serif;
 }
 
 @theme inline {
@@ -29,6 +31,14 @@ html[data-theme="dark"] {
 }
 
 @layer base {
+   @font-face {
+    font-family: "FiraCode Nerd Font Mono";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Regular.woff2") format("woff2"),
+         url("/fonts/FiraCode-Regular.woff2") format("woff2");
+  }
   * {
     @apply border-border outline-accent/75;
     scrollbar-width: auto;
@@ -38,7 +48,7 @@ html[data-theme="dark"] {
     @apply overflow-y-scroll scroll-smooth;
   }
   body {
-    @apply flex min-h-svh flex-col bg-background font-mono text-foreground selection:bg-accent/75 selection:text-background;
+    @apply flex min-h-svh flex-col bg-background text-foreground selection:bg-accent/75 selection:text-background;
   }
   a,
   button {
